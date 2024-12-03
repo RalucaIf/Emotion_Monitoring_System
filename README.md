@@ -30,8 +30,15 @@ The project integrates multiple sensors to:
 | Wires | For wiring all components together |
 
 ## Software Design
-IDE: Visual Studio Code, PlatformIO extension
-* Libraries: 
+**IDE**: Visual Studio Code, PlatformIO extension
+* **Libraries**:
+* **Main features**:
+    - Reads heart rate, GSR, and temperature data using appropriate libraries and sensors
+    - Calculates a stress index from sensor values
+    - Uses LEDs and a buzzer for feedback
+    - Sends data to an IoT dashboard
+
+### Workflow - TBD
 
 ## Final Results
 _TBD_
