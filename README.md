@@ -15,7 +15,7 @@ The project integrates multiple sensors to:
     - Display of real-time data on an LCD screen.
 * Send data to an IoT dashboard for remote monitoring and historical tracking
 ### Block Diagram 
-<img src="https://github.com/user-attachments/assets/c4a19aaf-9e48-4334-9094-0abcd0cac6c9" width="500" height="400">
+<img src="https://github.com/user-attachments/assets/c4a19aaf-9e48-4334-9094-0abcd0cac6c9" width="600" height="450">
 
 ## Hardware Design
 ### Bill Of Materials
@@ -25,13 +25,14 @@ The project integrates multiple sensors to:
 | Heart Rate Sensor - MAX30102 | 1 |For pulse measurement | [Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX30102.pdf) |
 | GSR Sensor | 1 |Measures skin conductivity | [Datasheet](https://www.farnell.com/datasheets/3759026.pdf)|
 | Temperature Sensor - TMP102 | 1 |For body temperature readings| [Datasheet](https://www.ti.com/lit/ds/symlink/tmp102.pdf?ts=1734356719087) |
-| LCD Display | 1 | For showing real-time data | [Datasheet]()|
+| LCD Display | 1 | For showing real-time data | - |
 | RGB LED | 1 | Provides visual feedback based on stress levels | - |
 | Buzzer | 1 | Alerts users of high stress levels | - |
-| Resistors | - | For circuit stabilization | - |
+| Resistors | 4 - 330 Ω each | For circuit stabilization | - |
 | Wires and breadboard | - | For wiring all components together | - |
 
-### Circuit Diagram - TBD
+### Circuit Diagram 
+<img src="https://github.com/user-attachments/assets/fca486da-ea98-4470-8e56-1a4b525e6009" width="600" height="450">
 
 ## Software Design
 **IDE**: Visual Studio Code, PlatformIO extension
