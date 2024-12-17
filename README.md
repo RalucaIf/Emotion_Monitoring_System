@@ -12,8 +12,10 @@ The project integrates multiple sensors to:
 * Provide real-time feedback:
     - Visual feedback through RGB LED.
     - Auditory alerts using a buzzer.
-    - Display of real-time data on an LCD screen.
 * Send data to an IoT dashboard for remote monitoring and historical tracking
+
+The system uses the Arduino Nano ESP32 microcontroller, which supports Wi-Fi communication and ensures efficient data transmission. The sensors are connected to appropriate GPIO pins on the microcontroller. By leveraging IoT, users can visualize their emotional health data remotely, identify trends, and take appropriate steps toward stress management.
+  
 ### Block Diagram 
 <img src="https://github.com/user-attachments/assets/c4a19aaf-9e48-4334-9094-0abcd0cac6c9" width="600" height="450">
 
@@ -33,6 +35,56 @@ The project integrates multiple sensors to:
 
 ### Circuit Diagram 
 <img src="https://github.com/user-attachments/assets/fca486da-ea98-4470-8e56-1a4b525e6009" width="600" height="450">
+
+## Hardware Functionality
+The project integrates multiple sensors, modules, and components to measure physiological parameters such as heart rate, body temperature, and skin conductivity, providing real-time feedback on stress levels and emotional states.
+### 1. Microcontroller: Arduino Nano ESP32
+<img src="https://github.com/user-attachments/assets/4b5fb4cf-60d7-4929-ae2c-e2e30b63d1f9" width="300" height="150">
+
+* The Arduino Nano ESP32 is the core of the system. It is a compact microcontroller featuring an ESP32 processor that supports:
+    - Wi-Fi and Bluetooth connectivity for IoT data transmission.
+    - Multiple analog and digital GPIO pins for sensor and module connections.
+* Key Specifications:
+    - Operating Voltage: 3.3V
+    - I/O Pins: 22 (Analog and Digital)
+    - PWM Support: On most GPIO pins
+
+### 2. TMP102 Temperature Sensor
+<img src="https://github.com/user-attachments/assets/d08f4895-070a-4f12-87e1-95df33be7d49" width="200" height="200">
+
+Body temperature can indicate stress or emotional changes, as temperature fluctuations often occur under stress.
+
+* Communication Interface: I2C (2 pins: SCL and SDA)
+* Pins used: 
+    - VCC (Power): Connect to 3.3V → TMP102 operates on 3.3V logic.
+    - GND (Ground): Connect to the GND rail → Provides a ground reference.
+    - SCL (Clock): Connect to A4 (SCL) → The clock line for I2C communication.
+    - SDA (Data): Connect to A5 (SDA) → The data line for I2C communication.
+
+### 3. MAX30102 Heart Rate Sensor
+<img src="https://github.com/user-attachments/assets/27ec97df-8d30-42e2-8600-d79090ebfa16" width="200" height="200">
+
+Heart rate is a key indicator of stress levels, as it tends to increase under stressful conditions.
+
+* Communication Interface: I2C (2 pins: SCL and SDA)
+* Pins used: 
+    - VIN (Power): Connect to 3.3V → MAX30102 operates on 3.3V logic.
+    - GND (Ground): Connect to the GND rail → Provides a ground reference.
+    - SCL (Clock): Connect to A4 (SCL) → The clock line for I2C communication.
+    - SDA (Data): Connect to A5 (SDA) → The data line for I2C communication.
+
+### 4. GSR Sensor
+<img src="https://github.com/user-attachments/assets/002533e4-4ecd-45d3-abbc-f1875183a23a" width="200" height="200">
+
+The GSR sensor outputs analog data corresponding to skin resistance, which is directly read by one of the analog pins. Skin conductivity is directly related to stress, making it a reliable indicator of emotional states.
+
+* Communication Interface: Analog output
+* Pins used: 
+    - VIN (Power): Connect to 3.3V → MAX30102 operates on 3.3V logic.
+    - GND (Ground): Connect to the GND rail → Provides a ground reference.
+    - SCL (Clock): Connect to A4 (SCL) → The clock line for I2C communication.
+    - SDA (Data): Connect to A5 (SDA) → The data line for I2C communication.
+
 
 ## Software Design
 **IDE**: Visual Studio Code, PlatformIO extension
