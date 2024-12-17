@@ -8,26 +8,30 @@ The project integrates multiple sensors to:
 * Measure physiological parameters:
     - Heart rate and variability using the MAX30102 sensor.
     - Galvanic skin response (GSR) for stress detection.
-    - Body temperature with the DHT22 sensor.
+    - Body temperature with the TMP102 sensor.
 * Provide real-time feedback:
-    - Visual feedback through RGB LEDs.
+    - Visual feedback through RGB LED.
     - Auditory alerts using a buzzer.
-    - Display of real-time data on an OLED screen.
+    - Display of real-time data on an LCD screen.
 * Send data to an IoT dashboard for remote monitoring and historical tracking
-### Block Diagram - TBD
+### Block Diagram 
+<img src="https://github.com/user-attachments/assets/c4a19aaf-9e48-4334-9094-0abcd0cac6c9" width="500" height="400">
 
 ## Hardware Design
-| Component | Description |
-| --- | --- |
-| ESP32 | Microcontroller with Wi-Fi |
-| Heart Rate Sensor | For pulse measurement |
-| GSR Sensor | Measures skin conductivity |
-| Temperature Sensor | For body temperature readings| 
-| OLED Display | For showing real-time data |
-| RGB LED | Provides visual feedback based on stress levels |
-| Buzzer | Alerts users of high stress levels |
-| Resistors | For circuit stabilization |
-| Wires | For wiring all components together |
+### Bill Of Materials
+| Component | Quantity | Description | Datasheet |
+| --- | :---: | :---: | :---: |
+| Arduino Nano ESP32 | 1 | Microcontroller with Wi-Fi | [Datasheet](https://docs-old.arduino.cc/resources/datasheets/ABX00083-datasheet.pdf)
+| Heart Rate Sensor - MAX30102 | 1 |For pulse measurement | [Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX30102.pdf) |
+| GSR Sensor | 1 |Measures skin conductivity | [Datasheet](https://www.farnell.com/datasheets/3759026.pdf)|
+| Temperature Sensor - TMP102 | 1 |For body temperature readings| [Datasheet](https://www.ti.com/lit/ds/symlink/tmp102.pdf?ts=1734356719087) |
+| LCD Display | 1 | For showing real-time data | [Datasheet]()|
+| RGB LED | 1 | Provides visual feedback based on stress levels | - |
+| Buzzer | 1 | Alerts users of high stress levels | - |
+| Resistors | - | For circuit stabilization | - |
+| Wires and breadboard | - | For wiring all components together | - |
+
+### Circuit Diagram - TBD
 
 ## Software Design
 **IDE**: Visual Studio Code, PlatformIO extension
@@ -35,7 +39,7 @@ The project integrates multiple sensors to:
 * **Main features**:
     - Reads heart rate, GSR, and temperature data using appropriate libraries and sensors
     - Calculates a stress index from sensor values
-    - Uses LEDs and a buzzer for feedback
+    - Uses RGB LED and a buzzer for feedback
     - Sends data to an IoT dashboard
 
 ### Workflow - TBD
@@ -49,6 +53,9 @@ _TBD_
 ## Journal
 * _30.11.2024_ - the choice of the project
 * _03.12.2024_ - started the documentation
+* _15.12.2024_ - made the block diagram
+* _16.12.2024_ - soldering pins and started the circuit
+* _17.12.2024_ - made the circuit and updated the documentation
 
 ## Resources
 _TBD_
