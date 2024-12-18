@@ -80,10 +80,25 @@ The GSR sensor outputs analog data corresponding to skin resistance, which is di
 
 * Communication Interface: Analog output
 * Pins used: 
-    - VIN (Power): Connect to 3.3V → MAX30102 operates on 3.3V logic.
+    - VCC (Power): Connect to 3.3V → GSR operates on 3.3V logic.
     - GND (Ground): Connect to the GND rail → Provides a ground reference.
-    - SCL (Clock): Connect to A4 (SCL) → The clock line for I2C communication.
-    - SDA (Data): Connect to A5 (SDA) → The data line for I2C communication.
+    - Signal Pin: Connect to A0 (analog) → Reads analog values representing skin conductivity.
+
+### 5. Audio and visual feedback
+* RGB LED
+    - Provides visual feedback on stress levels using different colors
+    - Communication Interface: PWM 
+    - Pins used:
+       - Red Pin -> D9 Pin
+       - Green Pin -> D8 Pin
+       - Blue Pin -> D7 Pin
+
+* Buzzer
+    - Provides auditory alerts when stress levels exceed predefined thresholds
+    - Communication Interface: PWM
+    - Pins used:
+       - Positive Pin -> D5 Pin
+       - Negative Pin -> GND
 
 
 ## Software Design
