@@ -103,14 +103,36 @@ The GSR sensor outputs analog data corresponding to skin resistance, which is di
 
 ## Software Design
 **IDE**: Visual Studio Code, PlatformIO extension
-* **Libraries**:
+* **Libraries** - The following libraries were selected for their specific functionalities and ease of integration with the components used in the project:
+    - <Wire.h> -> Used for I2C communication, which is critical for interfacing with the TMP102 temperature sensor and the MAX30102 pulse sensor. Both TMP102 and MAX30102 sensors rely on I2C for data transmission, making this library essential.
+    - <WiFi.h> -> Enables WiFi connectivity for transmitting data to the ThingSpeak IoT platform.
+    - <ThingSpeak.h> -> It integrates seamlessly with the WiFi library, enabling easy and structured IoT data handling.
+    - <SparkFunTMP102.h> -> A dedicated library for the TMP102 temperature sensor, handling all device-specific configurations and data acquisition.
+    - <MAX30105.h> and <heartRate.h> -> These libraries are essential for interacting with the MAX30102 pulse sensor and implementing the heart rate detection algorithm. They enable accurate detection of beats and calculation of heart rate using the IR signal.
 * **Main features**:
     - Reads heart rate, GSR, and temperature data using appropriate libraries and sensors
     - Calculates a stress index from sensor values
     - Uses RGB LED and a buzzer for feedback
     - Sends data to an IoT dashboard
-
+### The novelty of the project
+The project combines multiple physiological parameters to assess stress levels in real time, providing a holistic and innovative approach to emotional monitoring. Key novel elements include:
+- Real-time Stress Detection: Combines skin resistance (GSR), heart rate (via MAX30102), and body temperature (via TMP102) for a multidimensional analysis of stress.
+- IoT Integration: Sends data to ThingSpeak, enabling users to visualize trends and insights over time through a dashboard.
+- Feedback Mechanism: Uses an RGB LED and buzzer for immediate, intuitive feedback about stress levels, enhancing user experience.
+- Customizable Parameters: Thresholds for stress detection are easily adjustable, making the project adaptable to individual needs.
+### Laboratory concepts used
+The project leverages several core concepts learned in the laboratory, each implemented in the code:
+- I2C Communication -> for reading data from the TMP102 and MAX30102 sensors:
+    - The <Wire.h> library is used to initialize I2C communication (Wire.begin()), and sensor-specific libraries handle data transmission.
+    - I2C allows multiple sensors to communicate with the microcontroller using just two pins (SCL and SDA), optimizing pin usage.
+- PWM -> to control the brightness of the RGB LED for feedback:
+    - The pins for the RGB LED (RED_PIN, GREEN_PIN, BLUE_PIN) are configured as outputs, and digitalWrite/analogWrite is used to adjust the LED colors based on stress levels.
+    - PWM enables smooth control of LED brightness, enhancing the feedback mechanism.
+- Serial Communication -> for debugging, displaying sensor readings, and providing stress detection results via the Serial Monitor:
+    - The Serial.begin(115200) function initializes the serial communication, and Serial.print/Serial.println sends messages to the monitor.
+    - Essential for real-time monitoring during development and testing.
 ### Workflow - TBD
+The project is structured into modular functions that interact seamlessly to achieve real-time stress monitoring and IoT data transmission.
 
 ## Final Results
 _TBD_
