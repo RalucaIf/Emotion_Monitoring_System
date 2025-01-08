@@ -145,8 +145,7 @@ The project is structured into modular functions that interact seamlessly to ach
 - Modular Code Design: Each sensor has a dedicated function (readGSR, readTemperature, readPulse), making the code easy to debug and extend.
 - Dynamic Feedback: The use of RGB LEDs and buzzer provides intuitive, real-time feedback to users, improving the overall user experience.
 ## Final Results
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/rmPRet4HWfE/0.jpg)]([https://www.youtube.com/watch?v=rmPRet4HWfE])
-
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/rmPRet4HWfE/0.jpg)](http://www.youtube.com/watch?v=rmPRet4HWfE "Proiect - Introducere in Robotica")
 
 ## Conclusions
 This project demonstrates a robust and innovative approach to stress monitoring by combining multiple physiological parameters with IoT capabilities. By leveraging core laboratory concepts such as I2C, PWM, and serial communication, the project achieves efficient sensor integration and real-time feedback.
