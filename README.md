@@ -131,14 +131,25 @@ The project leverages several core concepts learned in the laboratory, each impl
 - Serial Communication -> for debugging, displaying sensor readings, and providing stress detection results via the Serial Monitor:
     - The Serial.begin(115200) function initializes the serial communication, and Serial.print/Serial.println sends messages to the monitor.
     - Essential for real-time monitoring during development and testing.
-### Workflow - TBD
+### Workflow 
 The project is structured into modular functions that interact seamlessly to achieve real-time stress monitoring and IoT data transmission.
+1. Sensor Data: modular functions (readGSR, readTemperature, readPulse) handle specific sensor readings: skin resistance (GSR), body temperature (TMP102), and heart rate (MAX30102).
+2. Stress Evaluation: combines the sensor data and compares them against predefined thresholds and Uses the determineStress function to classify the user as stressed or not stressed.
+3. Feedback Mechanism: provides immediate feedback using an RGB LED (red for stressed, green for relaxed) and a buzzer (beeps when stressed).
+4. IoT Integration: sendDataToThingSpeak function to structure and transmit data and it sends sensor readings to ThingSpeak at regular intervals for remote visualization.
+5. Validation: each functionality was tested independently (e.g., reading individual sensors) and integrated step-by-step.
 
+### Optimization
+- Efficient Sensor Reading: GSR readings are averaged over 10 samples to reduce noise, ensuring stable and reliable results.
+- Non-blocking Timers: The millis() function is used to schedule periodic tasks (e.g., stress evaluation and data transmission) without blocking the execution of other code.
+- Modular Code Design: Each sensor has a dedicated function (readGSR, readTemperature, readPulse), making the code easy to debug and extend.
+- Dynamic Feedback: The use of RGB LEDs and buzzer provides intuitive, real-time feedback to users, improving the overall user experience.
 ## Final Results
 _TBD_
 
+
 ## Conclusions
-_TBD_
+This project demonstrates a robust and innovative approach to stress monitoring by combining multiple physiological parameters with IoT capabilities. By leveraging core laboratory concepts such as I2C, PWM, and serial communication, the project achieves efficient sensor integration and real-time feedback.
 
 ## Journal
 * _30.11.2024_ - the choice of the project
@@ -146,6 +157,8 @@ _TBD_
 * _15.12.2024_ - made the block diagram
 * _16.12.2024_ - soldering pins and started the circuit
 * _17.12.2024_ - made the circuit and updated the documentation
+* _06.01 - 07.01.2024_ - software implementation
+* _08.01.2024_ - updated the documentation
 
 ## Resources
 _TBD_
