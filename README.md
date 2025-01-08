@@ -145,7 +145,7 @@ The project is structured into modular functions that interact seamlessly to ach
 - Modular Code Design: Each sensor has a dedicated function (readGSR, readTemperature, readPulse), making the code easy to debug and extend.
 - Dynamic Feedback: The use of RGB LEDs and buzzer provides intuitive, real-time feedback to users, improving the overall user experience.
 ## Final Results
-_TBD_
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/rmPRet4HWfE/0.jpg)]([https://www.youtube.com/watch?v=rmPRet4HWfE])
 
 
 ## Conclusions
